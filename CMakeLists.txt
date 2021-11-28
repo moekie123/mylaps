@@ -20,6 +20,10 @@ list( APPEND CXX_COMPILER_FLAGS "-Wall" "-Wextra")
 message("C++ compiler flags: ${CXX_COMPILER_FLAGS}")
 target_compile_options( ${PROJECT_NAME} PRIVATE ${CXX_COMPILER_FLAGS} )
 
+# Setup testing
+enable_testing()
+include( cmake/googletest.cmake )
+
 include_directories(include)
 add_subdirectory(src)
 
