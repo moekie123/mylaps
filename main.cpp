@@ -30,9 +30,11 @@ int main(int argc, char *argv[]) {
   track->start();
 
   auto [kartId, start, end, laptime] = track->getWinner();
+  // TODO start en end should be converted to human readble timestamp
+ 
+  std::cout << "Winner kart " << kartId << " start:" << start
+            << " end:" << end << " laptime:" << laptime << '\n';
 
-  std::cout << "Winner kart " << kartId << " start:" << start << " end:" << end
-            << " laptime:" << laptime << '\n';
   std::cout << "Terminating MyLaps Assignment\n";
   return 0;
 }
