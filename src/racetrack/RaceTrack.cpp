@@ -36,7 +36,7 @@ void RaceTrack::addRecord( int kartId, int laptime )
   	if (it == mKarts.end() )
 	{
 		std::cout << "race: new kart detected with id " << kartId << '\n';
-		kart = kartFactory->create("MyLaps");
+		kart = kartFactory->create("MyLapsKart");
 		kart->setID( kartId );
 		mKarts[ kartId ] = kart;
 	}

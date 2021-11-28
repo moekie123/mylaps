@@ -11,7 +11,7 @@ IKart *Factory< IKart >::create( const std::string &type )
 {
     IKart *kart = nullptr;
 
-    if ( type.find( "MyLaps" ) != std::string::npos ) 
+    if ( type.find( "MyLapsKart" ) != std::string::npos ) 
     {
 	kart = new MyLapsKart();    
     }
