@@ -15,5 +15,5 @@ class IReader
 		virtual void accept( ReaderVisitor* visitor ) = 0;
 
 	protected:
-		std::string filename;
+		std::string mFilename;
 };

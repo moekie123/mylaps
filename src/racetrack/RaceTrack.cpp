@@ -21,5 +21,5 @@ void RaceTrack::start()
 // Visitor methods
 void RaceTrack::addRecord( int kartId, int time )
 {
-	std::cout << "Add new record: kart[" << kartId << "] timestamp[" << time << "]\n";
+	std::cout << "race: new record: kart[" << kartId << "] timestamp[" << time << "]\n";
 }

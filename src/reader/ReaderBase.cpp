@@ -1,8 +1,8 @@
 #include "ReaderBase.h"
 
-void ReaderBase::setFilename( const std::string& filename )
+void ReaderBase::setFilename( std::string const& filename )
 {
-
+	mFilename = filename;
 }
 
 void ReaderBase::read()

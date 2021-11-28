@@ -48,6 +48,7 @@ int main( int argc, char* argv[] )
 
 	auto readerFactory = new Factory<IReader>();
 	auto reader = readerFactory->create("csv");
+	reader->setFilename( filename );
 
 	RaceTrack* track = new RaceTrack( laps, reader );
 	track->start();
