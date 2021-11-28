@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <tuple>
 
 #include "IKart.h"
 
@@ -15,6 +16,9 @@ class KartBase:
 		void addLaptime( int ) override;
 		
 		int getTotalLaps() override;
+
+		int getFastestLap() override;
+		std::tuple<int,int,int> getLapInfo( int ) override;
 
 	protected:
 		std::vector<int> mRecords;

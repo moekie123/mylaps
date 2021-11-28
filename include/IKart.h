@@ -1,6 +1,7 @@
 #pragma once
 
 #include<vector>
+#include<tuple>
 
 class IKart
 {
@@ -14,6 +15,9 @@ class IKart
 		virtual void addLaptime( int ) = 0;
 		
 		virtual int getTotalLaps() = 0;
+		
+		virtual int getFastestLap() = 0;
+		virtual std::tuple<int,int,int> getLapInfo( int ) = 0;
 
 	protected:
 		int mId;

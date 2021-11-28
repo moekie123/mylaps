@@ -53,6 +53,9 @@ int main( int argc, char* argv[] )
 	RaceTrack* track = new RaceTrack( laps, reader );
 	track->start();
 
+	auto [kartId, start, end, laptime] = track->getWinner();
+	
+	std::cout << "Winner kart " << kartId << " start:" << start << " end:" << end << " laptime:" << laptime << '\n';
 	std::cout << "Terminating MyLaps Assignment\n";
 	return 0;
 }

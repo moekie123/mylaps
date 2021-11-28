@@ -15,6 +15,8 @@ class RaceTrack:
 		
 		void start();
 
+		std::tuple<int,int,int,int> getWinner();
+
 	private:
 		const int mLaps;
 		IReader* mReader;

@@ -1,4 +1,7 @@
 #include <iostream>
+#include <vector>
+#include <tuple>
+#include <climits>
 
 #include "RaceTrack.h"
 
@@ -23,6 +26,30 @@ void RaceTrack::start()
 	mReader->accept( this );
 
 	std::cout << "race: complete\n";
+}
+
+std::tuple<int,int,int,int> RaceTrack::getWinner()
+{
+	int wId, wStart, wEnd, wLaptime = INT_MAX;
+
+	for ( auto const& [id, kart] : mKarts )
+	{
+		int lap = kart->getFastestLap();
+		std::cout << "race: result: kart " << id << " fastest lap: " << lap << '\n';
+
+		auto [start, end, laptime] = kart->getLapInfo( lap );
+		std::cout << "race: result: kart " << id << " start: " << start << " end: " << end << " laptime: " << laptime << '\n';
+
+		if( wLaptime > laptime ) 
+		{
+			wId = id;
+			wStart = start;
+			wEnd = end;
+			wLaptime = laptime;
+		}
+	}
+
+	return { wId, wStart, wEnd, wLaptime };
 }
 
 // Reader Visitor methods
