@@ -11,7 +11,7 @@ class IKart
 		virtual int getID() = 0;
 		virtual void setID( int ) = 0;
 
-		virtual void addTime( int ) = 0;
+		virtual void addLaptime( int ) = 0;
 
 	protected:
 		int mId;

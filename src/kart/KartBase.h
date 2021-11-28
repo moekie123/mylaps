@@ -10,5 +10,5 @@ class KartBase:
 		int getID() override;
 		void setID( int ) override;
 		
-		void addTime( int ) override;
+		void addLaptime( int ) override;
 };

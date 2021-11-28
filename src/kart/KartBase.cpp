@@ -10,7 +10,7 @@ int KartBase::getID()
 	return mId;
 }
 
-void KartBase::addTime( int )
+void KartBase::addLaptime( int )
 {
 
 }
