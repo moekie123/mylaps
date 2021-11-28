@@ -30,7 +30,7 @@ void RaceTrack::addRecord( int kartId, int laptime )
 {
 	IKart* kart = nullptr;
 
-	std::cout << "race: new record: kart[" << kartId << "] timestamp[" << time << "]\n";
+	std::cout << "race: new record: kart[" << kartId << "] timestamp[" << laptime << "]\n";
 
 	auto it = mKarts.find( kartId );
   	if (it == mKarts.end() )
