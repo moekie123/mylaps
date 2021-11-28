@@ -1,0 +1,4 @@
+Unit test need to be added
+
+See <project>/src/kart/test for gtest examples
+See <project>/src/racetrack/test for gmock examples
