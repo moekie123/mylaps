@@ -26,6 +26,9 @@ void CSVReader::accept( ReaderVisitor* visitor )
 		int kartId;
 		int timestamp, hour, minut, sec= 0;
 
+		if( visitor->isFinished() )
+			return;
+
 		std::cout << "reader: record: " <<  buffer << '\n';
 
 		std::stringstream s( buffer );

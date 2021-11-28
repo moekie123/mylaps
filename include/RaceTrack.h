@@ -23,4 +23,5 @@ class RaceTrack:
 
 		// Visitor Interface
 		void addRecord( int, int ) override;
+		bool isFinished() override;
 };

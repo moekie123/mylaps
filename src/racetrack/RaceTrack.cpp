@@ -44,6 +44,18 @@ void RaceTrack::addRecord( int kartId, int laptime )
 		kart = it->second;
 
 	kart->addLaptime( laptime );
+}
 
-	std::cout << "race: kart " << kartId << " lap count: " << kart->getTotalLaps() << '\n';
+bool RaceTrack::isFinished()
+{
+	for ( auto const& [id, kart] : mKarts)
+	{
+		if( kart->getTotalLaps() >= mLaps ) 
+		{
+			std::cout << "race: kart " << kart->getID() << " finished\n";
+			return true;	
+		}
+	}
+
+	return false;
 }

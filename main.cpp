@@ -44,7 +44,7 @@ int main( int argc, char* argv[] )
 	*/
 	// ##############################################
 
-	const int laps = 5;
+	const int laps = 4;
 
 	auto readerFactory = new Factory<IReader>();
 	auto reader = readerFactory->create("csv");
