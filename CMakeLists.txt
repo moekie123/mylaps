@@ -22,3 +22,5 @@ target_compile_options( ${PROJECT_NAME} PRIVATE ${CXX_COMPILER_FLAGS} )
 
 include_directories(include)
 add_subdirectory(src)
+
+target_link_libraries( ${PROJECT_NAME} kart-objs )

@@ -1,5 +1,8 @@
 #include <iostream>
 
+#include "Factory.h"
+#include "IKart.h"
+
 int main( int argc, char* argv[] )
 {
 	std::string filename;
@@ -14,6 +17,15 @@ int main( int argc, char* argv[] )
 
 	std::cout << filename << '\n';
 
+	// ##############################################
+	// Sandbox for some proof-of-concept code
+	
+	auto kartFactory = new Factory<IKart>();
+	auto kart = kartFactory->create("MyLaps");
+	kart->setID(1);
+	delete kartFactory;
+
+	// ##############################################
 	std::cout << "Terminating MyLaps Assignment\n";
 	return 0;
 }
