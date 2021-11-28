@@ -13,5 +13,13 @@ void RaceTrack::start()
 {
 	std::cout << "race: start\n";
 
+	mReader->accept( this );
+
 	std::cout << "race: complete\n";
+}
+
+// Visitor methods
+void RaceTrack::addRecord( int kartId, int time )
+{
+	std::cout << "Add new record: kart[" << kartId << "] timestamp[" << time << "]\n";
 }

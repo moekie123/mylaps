@@ -11,4 +11,7 @@ class ReaderBase:
 		void setFilename( const std::string& ) override;
 
 		void read() override;
+
+		// Vistable methods
+		void accept( ReaderVisitor* visitor ) override;
 };

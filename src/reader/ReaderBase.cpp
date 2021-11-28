@@ -9,3 +9,8 @@ void ReaderBase::read()
 {
 
 }
+
+void ReaderBase::accept( ReaderVisitor* visitor ) 
+{
+
+}
