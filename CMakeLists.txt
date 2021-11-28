@@ -1,0 +1,24 @@
+cmake_minimum_required (VERSION 3.21.0 )
+
+project( MyLaps
+	DESCRIPTION "MyLaps Assignment"
+	VERSION 0.1
+	LANGUAGES CXX )
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# Create executable
+add_executable( ${PROJECT_NAME} "")
+
+# Add source files
+target_sources( ${PROJECT_NAME} PRIVATE	main.cpp )
+
+# Set build flags
+list( APPEND CXX_COMPILER_FLAGS "-Wall" "-Wextra")
+message("C++ compiler flags: ${CXX_COMPILER_FLAGS}")
+target_compile_options( ${PROJECT_NAME} PRIVATE ${CXX_COMPILER_FLAGS} )
+
+include_directories(include)
+add_subdirectory(src)
