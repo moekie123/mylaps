@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 
 #include <map>
 
@@ -7,23 +7,21 @@
 
 #include "IKart.h"
 
-class RaceTrack:
-	public ReaderVisitor
-{
-	public:
-		RaceTrack( int , IReader* );
-		
-		void start();
+class RaceTrack : public ReaderVisitor {
+public:
+  RaceTrack(int, IReader *);
 
-		std::tuple<int,int,int,int> getWinner();
+  void start();
 
-	private:
-		const int mLaps;
-		IReader* mReader;
+  std::tuple<int, int, int, int> getWinner();
 
-		std::map< int, IKart*> mKarts;
+private:
+  const int mLaps;
+  IReader *mReader;
 
-		// Visitor Interface
-		void addRecord( int, int ) override;
-		bool isFinished() override;
+  std::map<int, IKart *> mKarts;
+
+  // Visitor Interface
+  void addRecord(int, int) override;
+  bool isFinished() override;
 };

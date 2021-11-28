@@ -2,11 +2,8 @@
 
 #include "ReaderBase.h"
 
-class CSVReader:
-	public ReaderBase
-{
-	public:
-	
-		// Vistable methods
-		void accept( ReaderVisitor* visitor ) override;
+class CSVReader : public ReaderBase {
+public:
+  // Vistable methods
+  void accept(ReaderVisitor *visitor) override;
 };

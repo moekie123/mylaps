@@ -2,16 +2,13 @@
 
 #include "IReader.h"
 
-class ReaderBase:
-	public IReader
-{
-	public:
+class ReaderBase : public IReader {
+public:
+  // Interface methods
+  void setFilename(const std::string &) override;
 
-		// Interface methods
-		void setFilename( const std::string& ) override;
+  void read() override;
 
-		void read() override;
-
-		// Vistable methods
-		void accept( ReaderVisitor* visitor ) override;
+  // Vistable methods
+  void accept(ReaderVisitor *visitor) override;
 };

@@ -2,11 +2,9 @@
 
 #include "KartBase.h"
 
-class MyLapsKart:
-	public KartBase
-{
-	public:
-		MyLapsKart(){}
+class MyLapsKart : public KartBase {
+public:
+  MyLapsKart() {}
 
-		void addLaptime( int ) override;
+  void addLaptime(int) override;
 };

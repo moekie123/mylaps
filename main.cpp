@@ -6,56 +6,33 @@
 
 #include "RaceTrack.h"
 
-int main( int argc, char* argv[] )
-{
-	std::string filename;
+int main(int argc, char *argv[]) {
 
-	std::cout << "Booting MyLaps Assignment\n";
+  std::string filename;
 
-	// Store (csv) filename
-	if ( argc > 1 )
-		filename = argv[1]; 
-	else
-		throw std::runtime_error("csv filename missing");
+  std::cout << "Booting MyLaps Assignment\n";
 
-	std::cout << filename << '\n';
+  // Store (csv) filename
+  if (argc > 1)
+    filename = argv[1];
+  else
+    throw std::runtime_error("csv filename missing");
 
-	// ##############################################
-	// Sandbox for some proof-of-concept code
+  std::cout << filename << '\n';
 
-	/**
-	// Kart Example	
-	auto kartFactory = new Factory<IKart>();
-	auto kart = kartFactory->create("MyLaps");
-	kart->setID(1);
-	delete kartFactory;
-	delete kart;
-	*/
+  const int laps = 4;
 
-	/** Reader Example	
-	auto readerFactory = new Factory<IReader>();
-	auto reader = readerFactory->create("csv");
+  auto readerFactory = new Factory<IReader>();
+  auto reader = readerFactory->create("csv");
+  reader->setFilename(filename);
 
-	reader->setFilename( filename );
-	reader->read();
+  RaceTrack *track = new RaceTrack(laps, reader);
+  track->start();
 
-	delete readerFactory;
-	delete reader;
-	*/
-	// ##############################################
+  auto [kartId, start, end, laptime] = track->getWinner();
 
-	const int laps = 4;
-
-	auto readerFactory = new Factory<IReader>();
-	auto reader = readerFactory->create("csv");
-	reader->setFilename( filename );
-
-	RaceTrack* track = new RaceTrack( laps, reader );
-	track->start();
-
-	auto [kartId, start, end, laptime] = track->getWinner();
-	
-	std::cout << "Winner kart " << kartId << " start:" << start << " end:" << end << " laptime:" << laptime << '\n';
-	std::cout << "Terminating MyLaps Assignment\n";
-	return 0;
+  std::cout << "Winner kart " << kartId << " start:" << start << " end:" << end
+            << " laptime:" << laptime << '\n';
+  std::cout << "Terminating MyLaps Assignment\n";
+  return 0;
 }
