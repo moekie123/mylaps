@@ -31,6 +31,10 @@ int main( int argc, char* argv[] )
 	// Reader Example	
 	auto readerFactory = new Factory<IReader>();
 	auto reader = readerFactory->create("csv");
+
+	reader->setFilename( filename );
+	reader->read();
+
 	delete readerFactory;
 	delete reader;
 
