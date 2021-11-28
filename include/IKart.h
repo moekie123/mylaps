@@ -12,6 +12,8 @@ class IKart
 		virtual void setID( int ) = 0;
 
 		virtual void addLaptime( int ) = 0;
+		
+		virtual int getTotalLaps() = 0;
 
 	protected:
 		int mId;

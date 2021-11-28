@@ -14,3 +14,8 @@ void KartBase::addLaptime( int )
 {
 
 }
+
+int KartBase::getTotalLaps()
+{
+	return mLaptimes.size();
+}

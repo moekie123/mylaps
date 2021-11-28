@@ -7,5 +7,6 @@ class MyLapsKart:
 {
 	public:
 		MyLapsKart(){}
-		~MyLapsKart(){}
+
+		void addLaptime( int ) override;
 };

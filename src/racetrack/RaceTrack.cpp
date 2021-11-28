@@ -44,4 +44,6 @@ void RaceTrack::addRecord( int kartId, int laptime )
 		kart = it->second;
 
 	kart->addLaptime( laptime );
+
+	std::cout << "race: kart " << kartId << " lap count: " << kart->getTotalLaps() << '\n';
 }

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "IKart.h"
 
 class KartBase:
@@ -11,4 +13,10 @@ class KartBase:
 		void setID( int ) override;
 		
 		void addLaptime( int ) override;
+		
+		int getTotalLaps() override;
+
+	protected:
+		std::vector<int> mRecords;
+		std::vector<int> mLaptimes;
 };
