@@ -2,6 +2,7 @@
 
 #include "Factory.h"
 #include "IKart.h"
+#include "IReader.h"
 
 int main( int argc, char* argv[] )
 {
@@ -19,11 +20,19 @@ int main( int argc, char* argv[] )
 
 	// ##############################################
 	// Sandbox for some proof-of-concept code
-	
+
+	// Kart Example	
 	auto kartFactory = new Factory<IKart>();
 	auto kart = kartFactory->create("MyLaps");
 	kart->setID(1);
 	delete kartFactory;
+	delete kart;
+
+	// Reader Example	
+	auto readerFactory = new Factory<IReader>();
+	auto reader = readerFactory->create("csv");
+	delete readerFactory;
+	delete reader;
 
 	// ##############################################
 	std::cout << "Terminating MyLaps Assignment\n";
