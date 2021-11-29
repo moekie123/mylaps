@@ -10,7 +10,9 @@ int main(int argc, char *argv[]) {
 
   std::string filename;
 
+#ifdef DEBUG
   std::cout << "Booting MyLaps Assignment\n";
+#endif
 
   // Store (csv) filename
   if (argc > 1)
@@ -18,7 +20,7 @@ int main(int argc, char *argv[]) {
   else
     throw std::runtime_error("csv filename missing");
 
-  std::cout << filename << '\n';
+  std::cout << "Datasource: " << filename << '\n';
 
   const int laps = 4;
 
@@ -30,11 +32,15 @@ int main(int argc, char *argv[]) {
   track->start();
 
   auto [kartId, start, end, laptime] = track->getWinner();
-  // TODO start en end should be converted to human readble timestamp
- 
-  std::cout << "Winner kart " << kartId << " start:" << start
-            << " end:" << end << " laptime:" << laptime << '\n';
 
+  // TODO start en end should be converted to human readble timestamp
+  std::cout << "Winner kart " << kartId << "\n\t start timestamp:" << start
+            << "\n\t end timestamp:" << end << "\n\t laptime:" << laptime
+            << " seconds\n";
+
+#ifdef DEBUG
   std::cout << "Terminating MyLaps Assignment\n";
+#endif
+
   return 0;
 }

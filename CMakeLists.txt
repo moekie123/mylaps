@@ -20,6 +20,10 @@ list( APPEND CXX_COMPILER_FLAGS "-Wall" "-Wextra")
 message("C++ compiler flags: ${CXX_COMPILER_FLAGS}")
 target_compile_options( ${PROJECT_NAME} PRIVATE ${CXX_COMPILER_FLAGS} )
 
+# Set debug flag
+#set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG")
+
 # Setup testing
 enable_testing()
 include( cmake/googletest.cmake )

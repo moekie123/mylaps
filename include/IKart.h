@@ -4,16 +4,16 @@
 #include <vector>
 
 /**
- * @Brief Kart Interface Class 
- * 
+ * @Brief Kart Interface Class
+ *
  * The kart represents an driver participating the Race
- */ 
+ */
 class IKart {
 public:
   virtual ~IKart() {}
 
   /**
-   * Kart Id getter 
+   * Kart Id getter
    * @return The id of the kart
    */
   virtual int getID() = 0;
@@ -22,13 +22,13 @@ public:
    * Kart Id setter
    * @param id The id of the kart
    */
-  virtual void setID( int id ) = 0;
+  virtual void setID(int id) = 0;
 
   /**
    * Add a new laptime
    * @param laptime The time in seconds from start of race
    */
-  virtual void addLaptime( int laptime ) = 0;
+  virtual void addLaptime(int laptime) = 0;
 
   /**
    * Lap count getter
@@ -54,7 +54,7 @@ public:
    *
    * TODO What should happen with invalid lapId's
    */
-  virtual std::tuple<int, int, int> getLapInfo( int lapId ) = 0;
+  virtual std::tuple<int, int, int> getLapInfo(int lapId) = 0;
 
 protected:
   int mId;

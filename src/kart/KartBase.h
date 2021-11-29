@@ -20,5 +20,7 @@ public:
 
 protected:
   std::vector<int> mRecords;
+
+  // TODO Consider other container type to reorder the laptimes
   std::vector<int> mLaptimes;
 };

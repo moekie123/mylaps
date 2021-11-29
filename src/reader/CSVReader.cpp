@@ -13,12 +13,16 @@ void CSVReader::accept( ReaderVisitor* visitor )
 	std::fstream fin;
 
 	// Open csv file
+#ifdef DEBUG
 	std::cout << "reader: open: " << mFilename << '\n';
+#endif
 	fin.open( mFilename , std::ios::in );
 
 	// Fetch header
 	std::getline( fin, buffer );
+#ifdef DEBUG
 	std::cout << "reader: header: " <<  buffer << '\n';
+#endif
 
 	// Fetch records
 	while( std::getline( fin, buffer ))
@@ -28,9 +32,9 @@ void CSVReader::accept( ReaderVisitor* visitor )
 
 		if( visitor->isFinished() )
 			return;
-
+#ifdef DEBUG
 		std::cout << "reader: record: " <<  buffer << '\n';
-
+#endif
 		std::stringstream s( buffer );
 
 		row.clear();

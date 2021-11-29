@@ -6,10 +6,12 @@
 /**
  * @Brief Reader Interface Class
  *
- * The reader represents the datasource from where the kart laptimes will be retrieved from
+ * The reader represents the datasource from where the kart laptimes will be
+ * retrieved from
  *
- * The Reader has an visitor patter implemented such that it can be 'easy' swapped by other type of data sources
- * Like XML,JSON or even an live stream version
+ * The Reader has an visitor patter implemented such that it can be 'easy'
+ * swapped by other type of data sources Like XML,JSON or even an live stream
+ * version
  */
 class IReader {
 public:
@@ -18,7 +20,8 @@ public:
   /**
    * Set the datasource filename
    *
-   * TODO For CSV, JSON and XML this makes senses but for future data stream an <Host/Port> constructor is makes more sense
+   * TODO For CSV, JSON and XML this makes senses but for future data stream an
+   * <Host/Port> constructor is makes more sense
    * @param filename The name of the file
    */
   virtual void setFilename(const std::string &filename) = 0;

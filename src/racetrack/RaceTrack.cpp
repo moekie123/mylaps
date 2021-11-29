@@ -20,12 +20,15 @@ RaceTrack::RaceTrack( int laps, IReader* reader ):
 
 void RaceTrack::start()
 {
+#ifdef DEBUG
 	std::cout << "race: start\n";
-	
+#endif
 	mKarts.clear();
 	mReader->accept( this );
 
+#ifdef DEBUG
 	std::cout << "race: complete\n";
+#endif
 }
 
 std::tuple<int,int,int,int> RaceTrack::getWinner()
@@ -35,11 +38,11 @@ std::tuple<int,int,int,int> RaceTrack::getWinner()
 	for ( auto const& [id, kart] : mKarts )
 	{
 		int lap = kart->getFastestLap();
-		std::cout << "race: result: kart " << id << " fastest lap: " << lap << '\n';
-
 		auto [start, end, laptime] = kart->getLapInfo( lap );
-		std::cout << "race: result: kart " << id << " start: " << start << " end: " << end << " laptime: " << laptime << '\n';
 
+#ifdef DEBUG
+		std::cout << "race: result: kart " << id << " start: " << start << " end: " << end << " laptime: " << laptime << '\n';
+#endif
 		if( wLaptime > laptime ) 
 		{
 			wId = id;
@@ -57,12 +60,16 @@ void RaceTrack::addRecord( int kartId, int laptime )
 {
 	IKart* kart = nullptr;
 
+#ifdef DEBUG
 	std::cout << "race: new record: kart[" << kartId << "] timestamp[" << laptime << "]\n";
+#endif
 
 	auto it = mKarts.find( kartId );
   	if (it == mKarts.end() )
 	{
+#ifdef DEBUG
 		std::cout << "race: new kart detected with id " << kartId << '\n';
+#endif
 		kart = kartFactory->create("MyLapsKart");
 		kart->setID( kartId );
 		mKarts[ kartId ] = kart;
@@ -79,7 +86,9 @@ bool RaceTrack::isFinished()
 	{
 		if( kart->getTotalLaps() >= mLaps ) 
 		{
+#ifdef DEBUG
 			std::cout << "race: kart " << kart->getID() << " finished\n";
+#endif
 			return true;	
 		}
 	}

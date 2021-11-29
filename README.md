@@ -1,6 +1,17 @@
 # mylaps
 MyLaps Assignment
 
+# Build commaned
+This project can be build with CMake.
+
+For creating a release application run:
+cmake -Bbuild -DCMAKE\_BUILD\_TYPE=Release
+
+For creating a debug application run:
+cmake -Bbuild -DCMAKE\_BUILD\_TYPE=Debug
+
+Debug provides more print output 
+
 # Assignment
 MYLAPS Sports Timing offers the best-in-class sports timing systems to measure, publish and analyze race and practice results for all sports. In this assignment we ask you create a simple piece of software that demonstrates how you build resilient, testable code. It does not have to be a fully functioning, polished solution.
 The solution should be build using C++. It may be a command line or GUI application, that’s up to you.
@@ -27,7 +38,8 @@ Due to limited time the following points where not completed
   * ~~Document (atleast) interface classes and public member variables~~
 * Memory leaks prevention
   * Use smart pointers std::unique<> in stead of raw pointer
-* Clear print output polution
+* Clear print output
+  * ~~Remove output polution in release version~~
   * Create logger object 
   * Maybe use external library like spdlog
   * Use info/debug/trace log levels
