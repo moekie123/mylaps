@@ -38,6 +38,9 @@ Due to limited time the following points where not completed
 * Debugging
   * Set debug flag in CMake such that symbols are available in gdb
 * Rename RaceTrack
+* Return data struct instead of (unclear) tuple
+  * For the RaseTrack::getWinner()
+  * For the IKart::getFastestLap()
 
 ## Other considerations
 Some exceptions and scenario's that came up while writing the code.
