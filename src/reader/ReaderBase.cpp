@@ -5,11 +5,6 @@ void ReaderBase::setFilename( std::string const& filename )
 	mFilename = filename;
 }
 
-void ReaderBase::read()
-{
-
-}
-
 void ReaderBase::accept( ReaderVisitor* visitor ) 
 {
 
