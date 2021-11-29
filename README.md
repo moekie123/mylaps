@@ -24,7 +24,7 @@ included.
 Due to limited time the following points where not completed
 * Documentation
   * Implemented doxygen generator
-  * Document (atleast) interface classes and public member variables
+  * ~~Document (atleast) interface classes and public member variables~~
 * Memory leaks prevention
   * Use smart pointers std::unique<> in stead of raw pointer
 * Clear print output polution
